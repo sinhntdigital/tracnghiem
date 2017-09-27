@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edu Plus</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="description" content="mô tả website">
+	<meta name="keywords" content="những từ khóa của website bạn">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,500&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+
+	<link rel="icon" href="images/front/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div class="container">
+				<div class="tm-logo pull-left">
+					<a href="#"><img src="images/logo.png" alt=""/></a>
+				</div> <!-- end tm-logo -->
+				<div class="tm-lang pull-left">
+					<a href="#" class="tm-ic tm-vn">Việt Nam</a>
+				</div> <!-- end tm-lang -->
+				<div class="tm-nav pull-left">
+					<i class="fa fa-navicon bt-nav"></i>
+					<div class="nav-content">
+						<div class="nav-over">
+							<ul>
+								<li class="active"><a href="#"><i class="fa fa-home"></i>Trang chủ</a></li>
+								<li><a href="#"><i class="fa fa-user-circle"></i>Kênh của tôi</a></li>
+								<li><a href="#"><i class="fa fa-free-code-camp"></i>Thịnh hành</a></li>
+								<li><a href="#"><i class="fa fa-registered"></i>Đăng ký</a></li>
+							</ul>
+							<h4>Thư viện</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-hourglass-start"></i>Lịch sử</a></li>
+								<li><a href="#"><i class="fa fa-clock-o"></i>Xem sau</a></li>
+								<li><a href="#"><i class="fa fa-thumbs-up"></i>Video được đánh dấu</a></li>
+							</ul>
+							<h4>Đăng ký</h4>
+							<ul>
+								<li><a href="#"><i class="fa fa-plus"></i>Kinh doanh thương mại</a></li>
+								<li><a href="#"><i class="fa fa-plus"></i>Công nghệ ứng dụng</a></li>
+								<li><a href="#"><i class="fa fa-plus"></i>Video được đánh dấu</a></li>
+							</ul>
+						</div> <!-- end nav-over -->
+					</div> <!-- end nav-content -->
+				</div> <!-- end tm-nav -->
+				<div class="tm-search pull-left">
+					<div class="frm-search">
+						<input type="text" class="form-control" />
+						<button class="tm-submit"><i class="fa fa-search"></i></button>
+					</div> <!-- end frm-search -->
+				</div> <!-- end tm-search -->
+				<div class="header-rg pull-right">
+					<div class="tm-large pull-left">
+						<i class="fa fa-th-large bt-large"></i>
+						<div class="lar-content">
+							<ul>
+								<li><a href="#">Gia sư chuyên nghiệp</a></li>
+								<li><a href="#">Chương trình ngoại khoá</a></li>
+								<li><a href="#">Chăm sóc sức khoẻ và dinh dưỡng</a></li>
+								<li><a href="#">Phát triển cá nhân và định hướng du học</a></li>
+							</ul>
+						</div> <!-- end lar-content -->
+					</div> <!-- end tm-large -->
+					<div class="tm-addmore pull-left">
+						<i class="fa fa-plus-circle bt-addMore"></i>
+
+						<div class="tm-popup">
+							<div class="bg-close"></div>
+							<div class="pop-content">
+								<div class="pop-select">
+									<ul>
+										<li>
+											<label class="ch-menu">
+												<select class="form-control">
+													<option>Chọn danh mục</option>
+												</select>
+											</label>
+										</li>
+										<li>
+											<label>
+												<select class="form-control">
+													<option>Ngành nghề</option>
+												</select>
+											</label>
+										</li>
+										<li>
+											<label>
+												<select class="form-control">
+													<option>Mục nghành</option>
+												</select>
+											</label>
+										</li>
+									</ul>
+									<div class="clear"></div>
+								</div> <!-- edn pop-select -->
+
+								<div class="pp-comment">
+									<span>Nhập</span>
+									<input type="text" placeholder="Nhập nội dung không quá 50 ký tự" />
+								</div> <!-- end pp-comment -->
+
+								<div class="tm-course">
+									<div class="course-top">
+										<label>
+											<select name= id="" class="form-control">
+												<option value="">Theo dạng</option>
+											</select>
+										</label>
+										<div class="crs-right">
+											<span><i class="tm-ic"></i>Khoá học <i class="cl"></i></span>
+										</div> <!-- end crs-right -->
+										<div class="clear"></div>
+									</div> <!-- end course-top -->
+
+									<div class="course-bot">
+										<div class="lst-course">
+											<ul>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-kh"></span>
+														<input id="check-1" type="checkbox" name="" value="">
+														<label for="check-1">Khoá học</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-dk"></span>
+														<input id="check-2" type="checkbox" name="" value="">
+														<label for="check-2">Dạy kèm</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-sp"></span>
+														<input id="check-3" type="checkbox" name="" value="">
+														<label for="check-3">Sản phẩm</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-bv"></span>
+														<input id="check-4" type="checkbox" name="" value="">
+														<label for="check-4">Bài viết</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-tl"></span>
+														<input id="check-5" type="checkbox" name="" value="">
+														<label for="check-5">Tài liệu</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-vd"></span>
+														<input id="check-6" type="checkbox" name="" value="">
+														<label for="check-6">Video</label>
+													</div>
+												</li>
+												<li>
+													<div class="checkbox">
+														<span class="tm-ic tm-gt"></span>
+														<input id="check-7" type="checkbox" name="" value="">
+														<label for="check-7">Giới thiệu</label>
+													</div>
+												</li>
+											</ul>
+										</div> <!-- end lst-course -->
+										<div class="rg-course">
+											<div class="frm-upload"></div> <!-- end frm-upload -->
+											<div class="img-upload">
+												<ul>
+													<li><a href="#"></a></li>
+													<li><a href="#"></a></li>
+													<li><a href="#"></a></li>
+													<li><a href="#"></a></li>
+													<li><a href="#"></a></li>
+													<li><a href="#"></a></li>
+												</ul>
+												<div class="clear"></div>
+											</div> <!-- end img-upload -->
+										</div> <!-- end rg-course -->
+										<div class="clear"></div>
+									</div> <!-- end course-bot -->
+								</div> <!-- end tm-course -->
+
+								<div class="course-detail cr-title">
+									<h3>Đặc điểm chi tiết</h3>
+									<ul>
+										<li>
+											<div class="detail">
+												<span>Hình thức dạy:</span>
+												<div class="fr-rg">
+													<label for="" class="tm-sl">
+														<select name="" id="">
+															<option value="">Chọn</option>
+														</select>
+													</label>
+												</div>
+											</div>
+										</li>
+										<li class="w-tm-4">
+											<div class="detail">
+												<span>Tên số mới:</span>
+												<div class="fr-rg">
+													<input type="text" class="tm-rg" />
+													<div class="checkbox cb-rg">
+														<input id="so-moi" type="checkbox" name="" value="">
+														<label for="so-moi"></label>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="detail">
+												<span>Phương pháp:</span>
+												<div class="fr-rg">
+													<input type="text" class="tm-dot" />
+												</div>
+											</div>
+										</li>										
+										<li class="w-tm-4">
+											<div class="detail">
+												<span>Đặt lại mã số cũ:</span>
+												<div class="fr-rg">
+													<label for="" class="tm-sl">
+														<select name="" id="">
+															<option value="">1</option>
+														</select>
+													</label>
+													<div class="checkbox cb-rg">
+														<input id="so-cu" type="checkbox" name="" value="">
+														<label for="so-cu"></label>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="detail">
+												<span>Số lượng:</span>
+												<div class="fr-rg">
+													<label for="" class="tm-sl">
+														<select name="" id="">
+															<option value="">Chọn</option>
+														</select>
+													</label>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="detail">
+												<span>Kinh nghiệm:</span>
+												<div class="fr-rg">
+													<input type="text" class="tm-dot" />
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="detail">
+												<span>Chuyên môn:</span>
+												<div class="fr-rg">
+													<input type="text" class="tm-dot" />
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="detail">
+												<span>Đối tượng:</span>
+												<div class="fr-rg">
+													<input type="text" class="tm-dot" />
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="clear"></div>
+									
+									<div class="cr-location">
+										<label for="" class="tm-sl vi-tri">
+											<i class="fa fa-map-marker"></i>
+											<select name="" id="">
+												<option value="">Đà Nẵng</option>
+												<option value="">Hà Nội</option>
+												<option value="">Hồ Chí Minh</option>
+											</select>
+										</label>
+										<div class="rg-locat">
+											<div class="ip-address">
+												<i class="tm-lc"></i>
+												<input type="text" placeholder="Nhập địa chỉ dẫn đường mới ..." />
+											</div>
+											<ul>
+												<li>
+													<i class="fa fa-calendar"></i>
+													Từ <input type="text" /> h <input type="text" /> Ngày <input type="text" /> / <input type="text" /> / <input type="text"  class="tm-y"/> Đang mở <i class="cl-b"></i>
+												</li>
+												<li>
+													<i class="fa fa-calendar"></i>
+													Đến <input type="text" /> h <input type="text" /> Ngày <input type="text" /> / <input type="text" /> / <input type="text" class="tm-y" /> Kết thúc <i class="cl-r"></i>
+												</li>
+												<li>
+													Tuần < 01 > | Nhập <input type="text" class="tm-active" /> hoạt động <i class="cl-y"></i>
+												</li>
+											</ul>
+											<div class="cr-table">
+												<table>
+													<tr>
+														<th>Ngày</th>
+														<th>Thứ 2</th>
+														<th>Thứ 3</th>
+														<th>Thứ 4</th>
+														<th>Thứ 5</th>
+														<th>Thứ 6</th>
+														<th>Thứ 7</th>
+														<th>CN</th>
+													</tr>
+													<tr>
+														<td><span>Sáng</span></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+													</tr>
+													<tr>
+														<td><span>Chiều</span></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+														<td><input type="text" /></td>
+													</tr>
+													<tr>
+														<td><span>Tối</span></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+														<td class="bg-dark"><input type="text" /></td>
+													</tr>
+												</table>
+											</div> <!-- end cr-table -->
+										</div> <!-- end rg-locat -->
+										<div class="clear"></div>
+									</div> <!-- end cr-location -->
+								</div> <!-- end course-detail -->
+
+								<div class="tm-money">
+									<i class="tm-ic tm-mn"></i>
+									<label class="ip-price">
+										<span>$ | </span>
+										<input type="text" placeholder="Nhập giá">
+									</label> /  
+									<input type="text" class="prc" />
+									Đơn vị
+									<label for="" class="ip-sl">
+										<select name="" id="">
+											<option value="">VNĐ</option>
+										</select>
+									</label>
+								</div> <!-- end tm-money -->
+
+								<div class="cr-comment cr-title">
+									<h3>Nội dung</h3>
+
+									<ul>
+										<li>
+											<span>Giới thiệu:</span>
+											<textarea name="" id="" class="form-control"></textarea>
+										</li>
+										<li>
+											<span>Phương pháp:</span>
+											<textarea name="" id="" class="form-control"></textarea>
+										</li>
+										<li>
+											<span>Nội dung:</span>
+											<textarea name="" id="" class="form-control"></textarea>
+										</li>
+										<li>
+											<span>Thêm <button><i class="fa fa-plus"></i></button></span>
+										</li>
+									</ul>
+								</div> <!-- end cr-comment -->
+
+								<div class="cr-contact cr-title">
+									<h3>Hình thức liên hệ</h3>
+									<ul>
+										<li>
+											<div class="radio">
+												<i class="fa fa-phone-square"></i>
+												<input type="radio" id="ct-form-1" value="hinh-thuc" name="form">
+												<label for="ct-form-1">0126 222 222</label>
+											</div>
+										</li>
+										<li>
+											<div class="radio">
+												<i class="fa fa-file-text-o"></i>
+												<input type="radio" id="ct-form-2" value="hinh-thuc" name="form">
+												<label for="ct-form-2">Đăng ký</label>
+											</div>
+										</li>
+										<li class="tp-input">
+											<div class="radio">
+												<input type="radio" id="ct-form-3" value="hinh-thuc" name="form">
+												<label for="ct-form-3">
+													<input type="text" placeholder="Nhập SĐT khác" />
+												</label>
+											</div>
+										</li>
+										<li class="tp-input">
+											<div class="radio">
+												<input type="radio" id="ct-form-4" value="hinh-thuc" name="form">
+												<label for="ct-form-4">
+													<input type="text" placeholder="Nhập Link Đk khác" />
+												</label>
+											</div>
+										</li>
+									</ul>
+								</div> <!-- end cr-contact -->
+							</div> <!-- end pop-content -->
+						</div> <!-- end tm-popup -->
+					</div> <!-- end tm-addmore -->
+					<div class="tm-user pull-left">
+						<div class="rg-user bt-user">
+							<img src="images/user-1.jpg" alt=""/>
+						</div> <!-- end rg-user -->
+					</div> <!-- end tm-user -->
+					<div class="more-info pull-left">
+						<i class="tm-ic tm-mi bt-user"></i>
+
+						<div class="info-content">
+							<ul>
+								<li><a href="#">Tạo trang</a></li>
+								<li><a href="#">Quản lý trang</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">Tạo nhóm</a></li>
+								<li><a href="#">Quản lý nhóm</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">Nhật ký hoạt động</a></li>
+								<li><a href="#">Cài đặt</a></li>
+								<li><a href="#">Đăng xuất</a></li>
+							</ul>
+						</div> <!-- end info-content -->
+					</div> <!-- end more-info -->
+				</div> <!-- end header-rg -->
+				<div class="clear"></div>
+			</div>
+		</header> <!-- end header -->
+
+		<div id="content">
+			<div class="container bg-none">
+				<div class="tm-content">
+					<div class="content-lf">
+						<div class="user-profile">
+							<div class="img-bkg">
+								<img src="images/banner-user.jpg" alt=""/>
+							</div> <!-- end img-bkg -->
+							<div class="txt-user">
+								<div class="img-txt">
+									<img src="images/avatar.jpg" alt=""/>
+								</div> <!-- end img-txt -->
+								<div class="txt-dt">
+									<h3>Nguyen Duc Lap</h3>
+									<p>
+										<img src="images/stars-5.png" alt=""/>
+										<span>23</span>
+									</p>
+								</div> <!-- end txt-dt -->
+							</div> <!-- end txt-user -->
+						</div> <!-- end user-profile -->
+						<div class="tm-views">
+							<ul>
+								<li><span><i class="tm-ic tm-v"></i>993</span></li>
+								<li class="text-center"><span><i class="fa fa-cloud-upload"></i>567</span></li>
+								<li class="text-right"><span><i class="fa fa-plus-circle"></i>567</span></li>
+							</ul>
+							<div class="clear"></div>
+						</div> <!-- end tm-views -->
+						<div class="lst-profile">
+							<ul>
+								<li><a href="#"><i class="fa fa-home"></i>Trang chủ ngành</a></li>
+								<li><a href="#"><i class="fa fa-user-circle-o"></i>Trang cá nhân</a></li>
+								<li><a href="#"><i class="fa fa-plus-circle"></i>Đã thêm vào (53)</a></li>
+								<li><a href="#"><i class="fa fa-stop-circle-o"></i>Đang quan tâm (89)</a></li>
+								<li><a href="#"><i class="fa fa-clock-o"></i>Đang hoạt động <i class="cl-ol"></i> <i class="fa fa-angle-down"></i></a></li>
+							</ul>
+
+							<span class="bt-views">Xem thêm</span>
+						</div> <!-- end lst-profile -->
+						<div class="arr-developer">
+							<ul>
+								<li><a href="#">Kinh doanh thương mại <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Công nghệ ứng dụng <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Quảng cáo truyền thông <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Nghệ thuật biểu diễn <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Giáo dục &amp; đào tạo <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Du học định cư <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Chăm sóc sức khoẻ <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Thẩm mỹ làm đẹp <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Khai thác nuôi trồng <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Kế toán tài chính <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Ẩm thực nhà hàng <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Du lịch khách sạn <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Kỹ thuật xây dựng <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Ngoại ngữ dịch thuật <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Dịch vụ tư vấn <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Thiết kế đồ hoạ <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Nghiên cứu phát minh <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Sáng tác ấn phẩm <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Giao thông vận tải <i class="fa fa-plus"></i></a></li>
+								<li><a href="#">Dịch vụ công <i class="fa fa-plus"></i></a></li>
+							</ul>
+						</div> <!-- end arr-developer -->
+					</div> <!-- end content-lf -->
+					<div class="content-rg">
+						<div class="tm-specialize">
+							<img src="images/chuyen-nganh.jpg" alt=""/>
+							<h2>Ngành kinh doanh</h2>
+						</div> <!-- end tm-specialize -->
+
+						<div class="lst-specialize">
+							<ul>
+								<li class="active"><a href="#">Đào tạo ngành</a></li>
+								<li><a href="#">Hỗ trợ ngành</a></li>
+								<li><a href="#">Thông tin ngành</a></li>
+								<li><a href="#">Cơ hội ngành</a></li>
+								<li><a href="#">Cộng đồng ngành</a></li>
+								<li><a href="#">Sản phẩm ngành</a></li>
+							</ul>
+							<div class="clear"></div>
+						</div> <!-- end lst-specialize -->
+
+						<div class="form-search">
+							<div class="sc-danh-muc">
+								<label>
+									<select name="" id="">
+										<option value="">Chọn danh mục đào tạo</option>
+									</select>
+								</label>
+							</div> <!-- end sc-danh-muc -->
+							<div class="sc-location"></div> <!-- end sc-location -->
+							<div class="sc-search"></div> <!-- end sc-search -->
+							<div class="sc-tieu-chi"></div> <!-- end sc-tieu-chi -->
+							<div class="sc-list-gird"></div> <!-- end sc-list-gird -->
+						</div> <!-- end form-search -->
+
+					</div> <!-- end content-rg -->
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div> <!-- end content -->
+
+		<footer>
+			<div class="container">
+				<div class="footer-top">
+					<ul class="lst-app">
+						<li><a href="#"><img src="images/app-store.png" alt=""/></a></li>
+						<li><a href="#"><img src="images/google-play.png" alt=""/></a></li>
+					</ul>
+				</div> <!-- end footer-top -->
+				<div class="footer-bot">
+					<ul class="ft-menu">
+						<li><a href="#">Về chúng tôi</a></li>
+						<li><a href="#">Điều khoản</a></li>
+						<li><a href="#">Quy tắc ứng xử</a></li>
+						<li><a href="#">Chính sách</a></li>
+					</ul>
+					<ul class="ft-bmenu">
+						<li><a href="#">Trợ giúp</a></li>
+						<li><a href="#">An toàn</a></li>
+						<li><a href="#">Bản quyền</a></li>
+					</ul>
+				</div> <!-- end footer-bot -->
+			</div>
+		</footer> <!-- end footer -->
+	</div> <!-- end wrapper -->
+
+
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			progress(60, $('#progressBar-1'));
+		});
+	</script>
+</body>
+</html>
