@@ -142,9 +142,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <i class="icon-lock"></i> Lock Screen </a>
                                                 </li>
                                                 <li>
-                                                    <a href="page_user_login_1.html">
+                                                    <a  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                                                     >
                                                         <i class="icon-key"></i> Log Out </a>
                                                 </li>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
                                             </ul>
                                         </li>
                                         <!-- END USER LOGIN DROPDOWN -->

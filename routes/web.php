@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('admin/app');
-});
+
+Route::get('/', ['middleware' => ['admin'], function() {
+   return view('admin/app');
+}]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
