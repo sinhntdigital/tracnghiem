@@ -14,7 +14,7 @@ class AddColumnStartDoingToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function($table){
-            $table->dateTime("start_doing");
+            $table->dateTime("start_doing")->nullable();
         });
     }
 
