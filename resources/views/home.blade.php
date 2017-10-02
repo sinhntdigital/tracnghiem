@@ -10,10 +10,11 @@
                     <b> noi dung question</b>
                 </div>
                 <div class="select_queston">
-                    chon cau tra loi
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

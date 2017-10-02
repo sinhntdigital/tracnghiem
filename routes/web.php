@@ -18,3 +18,8 @@ Route::get('/', ['middleware' => ['admin'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/thi/{exam_id}', function($id) {
+   return view('member.thi',compact('id'));
+});
+
