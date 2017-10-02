@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContentQuestionsTable extends Migration
+class CreateContentAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateContentQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_questions', function (Blueprint $table) {
+        Schema::create('content_answers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('question_id')->unsigned();
             $table->foreign('question_id')->references('id')->on('questions');
-            $table->string('content_question');
+            $table->string('content_answer');
             $table->boolean('answer');
             $table->boolean('user_answer');
             $table->timestamps();

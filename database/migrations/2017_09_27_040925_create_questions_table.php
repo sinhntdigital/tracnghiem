@@ -18,6 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('exam_id')->unsigned();
             $table->foreign('exam_id')->references('id')->on('exams');
             $table->string('title_question');
+            $table->string('content_question');
             $table->timestamps();
         });
     }
