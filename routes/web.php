@@ -25,6 +25,7 @@ Route::group(['middleware' => 'admin'], function(){
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/quiz/{exam_id}','QuizController@index' )->name('quiz');
+	Route::get('/update_answer','QuizController@updateAnswer')->name('updateAnswer');
 });
 
 

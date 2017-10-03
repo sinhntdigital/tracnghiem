@@ -20,7 +20,7 @@
                             @foreach($answers as $answer)
                                 @if($question->question_id==$answer->question_id)
                                     <div class="element_quiz col-md-6">
-                                        <input type="radio" name="gender" value="{{$answer->content_answer_id}}"> 
+                                        <input type="checkbox" name="gender" <?php if($answer->user_answer==1) echo 'checked';?> value="{{$answer->content_answer_id}}" onclick="sendAnswer(this.value)" > 
                                         {{$answer->content_answer}}
                                     </div>
                                 @endif
@@ -34,5 +34,26 @@
         </div>
     </div>
 </div>
-{!! $questions->render() !!}
+<div style="text-align: center">
+    {!! $questions->render() !!}
+</div>
+<script type="text/javascript">
+    function sendAnswer(contentA_id) {
+        $.ajax({
+            url: '{{route("updateAnswer")}}',
+            type: 'GET',
+            data: {contentA_id: contentA_id},
+        })
+        .done(function(data) {
+            console.log(data);
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+        
+    }
+</script>
 @endsection
