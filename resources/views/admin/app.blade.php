@@ -499,6 +499,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
                                     <h2>About</h2>
                                     <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore. </p>
+
                                 </div>
                                 <div class="col-md-3 col-sm-6 col-xs12 footer-block">
                                     <h2>Subscribe Email</h2>
@@ -648,4 +649,7 @@ function responsive_filemanager_callback(field_id){
 }
 
     </script>
+    <a  onclick="send(2)">
+    <i class="icon-key"></i> exam_id </a>
+    
 </html>
