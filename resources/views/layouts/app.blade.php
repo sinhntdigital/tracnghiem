@@ -12,11 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-    <style type="text/css">
-        .question{
-        background: LightGray;
-        }
-    </style>
+    <link href="{{ asset('public/css/member/quiz.css') }}"  rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="app">

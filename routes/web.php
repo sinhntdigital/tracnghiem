@@ -11,15 +11,21 @@
 |
 */
 
-
 Route::get('/', ['middleware' => ['admin'], function() {
    return view('admin/app');
 }]);
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/thi/{exam_id}', function($id) {
-   return view('member.thi',compact('id'));
+/*----------manage route admin----------*/
+Route::group(['middleware' => 'admin'], function(){
+	Route::get('/',  function() {
+		return view('admin/app');
+	});
 });
+/*----------manage route member----------*/
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/quiz/{exam_id}','QuizController@index' )->name('quiz');
+});
+
+
 

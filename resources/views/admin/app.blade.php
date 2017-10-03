@@ -1,9 +1,4 @@
-<link rel="stylesheet" type="text/css" href="{{ asset("public/css/bootstrap.css") }}"/>
-<!-- begin react js  -->
- <script src="{{ asset('public/vendor/react-laravel/react.js') }}"></script>
-  <script src="{{ asset('public/vendor/react-laravel/react-dom.js') }}"></script>
-  <script src="{{ asset('public/vendor/react-laravel/browser.min.js') }}"></script>
-<script type="text/babel" src="{{ asset('public/js/components.js') }}"></script>
+
 <!-- end react js -->
 <!DOCTYPE html>
 <!-- 
