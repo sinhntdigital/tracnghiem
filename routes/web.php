@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 Route::get('/', ['middleware' => ['admin'], function() {
    return view('admin/app');
 }]);
@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/quiz/{exam_id}','QuizController@index' )->name('quiz');
 	Route::get('/update_answer','QuizController@updateAnswer')->name('updateAnswer');
+	Route::get('/listquiz','QuizController@listQuiz')->name('listquiz');
+	Route::get('/update_start_doing','QuizController@updateStartDoing')->name('usd');
 });
 
 
