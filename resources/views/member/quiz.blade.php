@@ -58,7 +58,7 @@
     }
 </script>
 
-<div>
+<div style="margin:0 550px 0 550px ;font-size: 30px;font-weight: bold;border-style: solid;min-width: 150px;text-align: center;">
     <span id="h">Giờ</span> :
     <span id="m">Phút</span> :
     <span id="s">Giây</span>
@@ -123,6 +123,19 @@
         clearTimeout(timeout);
     }
 
+</script>
+<!-- noback and no forward browser -->
+<script type="text/javascript">
+    window.history.forward();
+    function noBack()
+    {
+        window.history.forward();
+    }
+
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
 </script>
 
 @endsection

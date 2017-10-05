@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/update_answer','QuizController@updateAnswer')->name('updateAnswer');
 	Route::get('/listquiz','QuizController@listQuiz')->name('listquiz');
 	Route::get('/update_start_doing','QuizController@updateStartDoing')->name('usd');
+	Route::get('result/{exam_id}','QuizController@result')->name('result');
 });
 
 
