@@ -70,4 +70,10 @@ class QuizController extends Controller
         return view('member.result',compact('answers','questions','results','resultOfYous')); 
     }
 
+    /*________detail question____________*/
+    public function detailQuestion() {
+    	$details=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('exams','users.id','=','exams.user_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exam_id','=',$_GET['exam_id'])->where('question_id','=',$_GET['question_id'])->select('*','content_answers.id as content_answer_id')->get();
+    	return view('member.detailQuestion',compact('details'));
+    }
+
 }
