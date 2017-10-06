@@ -64,22 +64,10 @@ class QuizController extends Controller
         $answers=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('exams','users.id','=','exams.user_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exam_id','=',$examId)->select('*','content_answers.id as content_answer_id')->get();
 
         $questions=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('exams','users.id','=','exams.user_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exam_id','=',$examId)->groupBy('question_id')->select('*','content_answers.id as content_answer_id')->get();
-        
-        $diem=0;
-        foreach ($questions as $question) {
-        	$dem=0;
-        	foreach ($answers as $answer) {
-        		if($question->question_id == $answer->question_id) {
-	        		if($answer->user_answer != $answer->answer) {
-		        		$dem++;
-		        	}
-        		}
-	        }
-	        if($dem == 0 )
-	        	$diem++;
-        }
-        
-   		echo $diem;
+
+        $results=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('exams','users.id','=','exams.user_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exam_id','=',$examId)->where('answer','=',1)->select('*','content_answers.id as content_answer_id')->get();
+         $resultOfYous=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('exams','users.id','=','exams.user_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exam_id','=',$examId)->where('user_answer','=',1)->select('*','content_answers.id as content_answer_id')->get();
+        return view('member.result',compact('answers','questions','results','resultOfYous')); 
     }
 
 }

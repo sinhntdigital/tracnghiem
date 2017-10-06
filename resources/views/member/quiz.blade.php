@@ -103,7 +103,7 @@
         if (h == -1){
             clearTimeout(timeout);
             alert('Hết giờ');
-            window.location="{{route('listquiz')}}";
+            window.location="{{route('result',$examId)}}";
             return false;
         }
 
