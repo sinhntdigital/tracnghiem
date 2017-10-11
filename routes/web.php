@@ -15,10 +15,10 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 Auth::routes();
 /*----------manage route admin----------*/
 Route::group(['middleware' => 'admin'], function(){
-	Route::get('/admin/manageUser', 'AdminController@manageUser')->name('manageUser');
-	Route::resource('user', 'UsersController');
-	/*datatable*/
 	Route::get('/admin/datatables_user', 'DatatablesController@userData')->name('datatables_user');
+	Route::get('/', 'AdminController@index')->name('homeAdmin');
+	Route::resource('admin', 'AdminController');
+	/*datatable*/
 });
 /*----------manage route member----------*/
 Route::group(['middleware' => 'auth'], function(){
