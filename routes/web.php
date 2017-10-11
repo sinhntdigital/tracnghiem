@@ -11,15 +11,14 @@
 |
 */
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-Route::get('/', ['middleware' => ['admin'], function() {
-   return view('admin/app');
-}]);
+
 Auth::routes();
 /*----------manage route admin----------*/
 Route::group(['middleware' => 'admin'], function(){
-	Route::get('/',  function() {
-		return view('admin/app');
-	});
+	Route::get('/admin/manageUser', 'AdminController@manageUser')->name('manageUser');
+	Route::resource('user', 'UsersController');
+	/*datatable*/
+	Route::get('/admin/datatables_user', 'DatatablesController@userData')->name('datatables_user');
 });
 /*----------manage route member----------*/
 Route::group(['middleware' => 'auth'], function(){
