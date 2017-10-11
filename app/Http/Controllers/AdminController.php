@@ -18,11 +18,12 @@ class AdminController extends Controller
      public function create()
     {
 
-    	$listUsers = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->leftjoin('roles','role_user.role_id','=','roles.id')->where('roles.name','!=','admin')->groupBy('roles.id')->select('users.*','roles.name as role_name')->get();
+    	$listUsers = \App\Role::where('name','!=','admin')->get();
        return view("admin.user.create_and_edit",compact('listUsers'));
     }
 
     public function store(Request $request) {
+
     	if(isset($_POST['send_form_edit_user']))
 	        DB::transaction(function () {
 		    	$user = \App\User::where('id',$_POST['user_id'])->first();
@@ -31,9 +32,7 @@ class AdminController extends Controller
 		        $user->password = bcrypt($_POST['password']);
 		        $user->save();
 		        //save role_user
-		        $roleUser = \App\RoleUser::where('user_id','=',$_POST['user_id'])->where('role_id','=',$_POST['auth_id'])->first();
-		        $roleUser->role_id = $_POST['auth_id'];
-		        $roleUser->save();
+        		\App\RoleUser::where('user_id','=',$_POST['user_id'])->where('role_id','=',$_POST['old_auth_id'])->update(['role_id' => $_POST['auth_id']]);
 			});
     	else
     		DB::transaction(function () {
@@ -58,8 +57,8 @@ class AdminController extends Controller
     }
     //-----function edit-------//
     public function edit($id,Request $request) {
-	    $listUsers = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->leftjoin('roles','role_user.role_id','=','roles.id')->where('roles.name','!=','admin')->groupBy('roles.id')->select('users.*','roles.name as role_name')->get();
-	    $userEdits = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->leftjoin('roles','role_user.role_id','=','roles.id')->where('users.id','=',$id)->groupBy('roles.id')->select('users.*','roles.name as role_name')->first();
+	    $listUsers = \App\Role::where('name','!=','admin')->get();
+	    $userEdits = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->where('users.id','=',$id)->first();
 	    return view("admin.user.create_and_edit",compact('listUsers','userEdits'));
     }
 

@@ -2,7 +2,7 @@
 @section('page_content')
   @if(isset($userEdits))
     <form action="{{route('admin.store')}}" method="POST">
-      <input type="hidden" name="_token" value="XPgZ7JDUrAPsRmLjDpjYDeSqS6JXkkC1ohGKWbar">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <input type="hidden" name="user_id" value="{{$userEdits->id}}">
       <div class="form-group">
         <label for="email">Email address:</label>
@@ -21,17 +21,18 @@
         <select class="form-control" required="true" name = "auth_id">
           <option value="">chọn quyền user</option>
           @foreach($listUsers as $listUser)
-          <option value="{{$listUser->id}}" <?php if($listUser->role_name==$userEdits->role_name) echo "selected";?> >
-              {{$listUser->role_name}}
+          <option value="{{$listUser->id}}" <?php if($listUser->id==$userEdits->role_id) echo "selected";?> >
+              {{$listUser->name}}
           </option>
           @endforeach
         </select>
+        <input type="hidden" name="old_auth_id" value="{{$userEdits->role_id}}">
       </div>
       <button type="submit" name="send_form_edit_user" class="btn btn-default">Submit</button>
     </form>
   @else
     <form action="{{route('admin.store')}}" method="POST">
-      <input type="hidden" name="_token" value="XPgZ7JDUrAPsRmLjDpjYDeSqS6JXkkC1ohGKWbar">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
         <label for="email">Email address:</label>
         <input type="email" class="form-control" id="email" required="true" name="email">
@@ -50,7 +51,7 @@
           <option value="">chọn quyền user</option>
           @foreach($listUsers as $listUser)
           <option value="{{$listUser->id}}">
-              {{$listUser->role_name}}
+              {{$listUser->name}}
           </option>
           @endforeach
         </select>

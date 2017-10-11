@@ -11,7 +11,7 @@ class DatatablesController extends Controller
     public function userData()
     {
 
-    	$user = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->leftjoin('roles','role_user.role_id','=','roles.id')->where('roles.name','=','member')->select('users.*')->get();
+    	$user = \App\User::leftjoin('role_user','role_user.user_id','=','users.id')->leftjoin('roles','role_user.role_id','=','roles.id')->where('roles.name','!=','admin')->select('users.*')->get();
        	return Datatables::of($user)
 			                ->addColumn('action', function($user) {
 			                	$textDelete = "<form action='' method='post'>";
