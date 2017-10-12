@@ -16,7 +16,9 @@ Auth::routes();
 /*----------manage route admin----------*/
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin/datatables_user', 'DatatablesController@userData')->name('datatables_user');
+	Route::get('/admin/datatables_role', 'DatatablesController@roleData')->name('datatables_role');
 	Route::get('/', 'AdminController@index')->name('homeAdmin');
+	Route::resource('listRole', 'RoleController');
 	Route::resource('admin', 'AdminController');
 	/*datatable*/
 });

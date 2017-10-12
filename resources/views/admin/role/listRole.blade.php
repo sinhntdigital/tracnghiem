@@ -1,12 +1,11 @@
 @extends('admin.app')
 @section('page_content')
-	<a href="{{route('admin.create')}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm user</a>
+	<a href="{{route('listRole.create')}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm Role</a>
 	    <table class="table table-bordered" id="users-table">
 	        <thead>
 	            <tr>
 	                <th>Id</th>
-	                <th>Tên </th>
-	                <th>email</th>
+	                <th>Quyền</th>
 	                <th>Ngày tạo</th>
 	                <th>Hành động</th>
 	            </tr>
@@ -22,11 +21,10 @@
 	    $('#users-table').DataTable({
 	        processing: true,
 	        serverSide: true,
-	        ajax: '{!! route("datatables_user") !!}',
+	        ajax: '{!! route("datatables_role") !!}',
 	        columns: [
 	            { data: 'id', name: 'id' },
 	            { data: 'name', name: 'name' },
-	            { data: 'email', name: 'email' },
 	            { data: 'created_at', name: 'created_at' },
 	            { data: 'action', name: 'action' , orderable: false, searchable: false}
 	        ]
