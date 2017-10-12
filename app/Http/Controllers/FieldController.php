@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RoleController extends Controller
+class FieldController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('admin.role.listRole');
+        return view('admin.field.listField');
     }
 
     /**
@@ -23,7 +23,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-         return view('admin.role.create_and_edit');
+        return view('admin.field.create_and_edit');
     }
 
     /**
@@ -34,17 +34,17 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        if(isset($_POST['send_form_role_edit'])) {
-            $role = \App\Role::find($_POST['role_id']);
-            $role->name  = $_POST['name'];
-            $role->save();
-        }else {
-            $role = new \App\Role;
-            $role->name  = $_POST['name'];
-            $role->save();
+        if(isset($_POST['send_form_field_edit'])) {
+            $field = \App\Field::find($_POST['field_id']);
+            $field->name  = $_POST['name'];
+            $field->save();
         }
-        
-        return redirect()->route('listRole.index');
+        else {
+            $field = new \App\Field;
+            $field->name  = $_POST['name'];
+            $field->save();
+        }
+        return redirect()->route('field.index');
     }
 
     /**
@@ -66,8 +66,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $listRoles = \App\Role::where('id','=',$id)->first();
-        return view("admin.role.create_and_edit",compact('listRoles'));
+        $listFields = \App\Field::where('id','=',$id)->first();
+        return view("admin.field.create_and_edit",compact('listFields'));
     }
 
     /**

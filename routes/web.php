@@ -17,9 +17,11 @@ Auth::routes();
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin/datatables_user', 'DatatablesController@userData')->name('datatables_user');
 	Route::get('/admin/datatables_role', 'DatatablesController@roleData')->name('datatables_role');
+	Route::get('/admin/datatables_field', 'DatatablesController@fieldData')->name('datatables_field');
 	Route::get('/', 'AdminController@index')->name('homeAdmin');
 	Route::resource('listRole', 'RoleController');
 	Route::resource('admin', 'AdminController');
+	Route::resource('field', 'FieldController');
 	/*datatable*/
 });
 /*----------manage route member----------*/

@@ -180,74 +180,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
                                 <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
-                                            <a href="javascript:;"> Dashboard
-                                                <span class="arrow"></span>
-                                            </a>
-                                            <ul class="dropdown-menu pull-left">
-                                                <li aria-haspopup="true" class=" active">
-                                                    <a href="index.html" class="nav-link  active">
-                                                        <i class="icon-bar-chart"></i> Default Dashboard
-                                                        <span class="badge badge-success">1</span>
-                                                    </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="dashboard_2.html" class="nav-link  ">
-                                                        <i class="icon-bulb"></i> Dashboard 2 </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="dashboard_3.html" class="nav-link  ">
-                                                        <i class="icon-graph"></i> Dashboard 3
-                                                        <span class="badge badge-danger">3</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                       
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="javascript:;"> Manager User
                                                 <span class="arrow"></span>
                                             </a>
                                             <ul class="dropdown-menu pull-left">
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_user/user')}}" class="nav-link  "> User </a>
+                                                    <a href="{{route('admin.index')}}" class="nav-link  "> danh sách User </a>
                                                 </li>
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_user/role')}}" class="nav-link  "> Role </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_user/role-user')}}" class="nav-link  "> RoleUser </a>
+                                                    <a href="{{route('listRole.index')}}" class="nav-link  "> danh sách Role </a>
                                                 </li>
                                             </ul>
                                         </li>
 
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="javascript:;"> Manager Courses
+                                            <a href="javascript:;"> Quản lý đề thi
                                                 <span class="arrow"></span>
                                             </a>
                                             <ul class="dropdown-menu pull-left">
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_courses/courses')}}" class="nav-link  "> Courses </a>
+                                                    <a href="{{route('field.index')}}" class="nav-link  "> danh sách Feild </a>
                                                 </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_courses/class_courses')}}" class="nav-link  "> Class Courses  </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="{{asset('admin/manager_courses/class_course_detail')}}" class="nav-link  "> Class Courses Detail </a>
-                                                </li>
-                                               
                                             </ul>
                                         </li>
-
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="javascript:;"> Manager schedules
-                                                <span class="arrow"></span>
-                                            </a>
-                                            
-                                        </li>
-                                       
-                               
-                          
                                     </ul>
                                 </div>
                                 <!-- END MEGA MENU -->
@@ -643,8 +599,7 @@ function responsive_filemanager_callback(field_id){
     parent.$.fancybox.close();
 }
 
-    </script>
-    <a  onclick="send(2)">
-    <i class="icon-key"></i> exam_id </a>
+</script>
+   
     
 </html>
