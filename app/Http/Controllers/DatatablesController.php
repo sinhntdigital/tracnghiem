@@ -78,4 +78,22 @@ class DatatablesController extends Controller
 			                })
 			                ->make(true);
     }
+
+        //exam datatables
+    public function examData()
+    {
+
+    	$exam = \App\Exam::leftjoin('questions','questions.exam_id','=','exams.id')->leftjoin('content_answers','content_answers.question_id','=','questions.id')->groupBy('exams.id')->select('*','exams.id as eid', \DB::raw('count(DISTINCT(questions.id)) as total'))->get();
+       	return Datatables::of($exam)
+			                ->addColumn('action', function($exam) {
+			                	$textDelete = "<form action='' method='post'>";
+			                 	$textDelete .= csrf_field() . method_field('delete');
+								$textDelete .= "<a href='". route("exam.edit", $exam->eid) ."' class=\"btn btn-xs btn-primary\"><i class=\"glyphicon glyphicon-edit\"></i></a>";
+								$textDelete .= "<button type=\"submit\" onclick=\"return confirm('Are you sure ?')\" class=\"btn btn-xs btn-danger\"><i class=\"glyphicon glyphicon-remove\"></i></button>";
+								$textDelete .= "</form>";
+
+				                return $textDelete;
+			                })
+			                ->make(true);
+    }
 }

@@ -202,7 +202,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <li aria-haspopup="true" class=" ">
                                                     <a href="{{route('field.index')}}" class="nav-link  "> danh sách Feild </a>
                                                 </li>
+                                                <li aria-haspopup="true" class=" ">
+                                                    <a href="{{route('level.index')}}" class="nav-link  "> danh sách level </a>
+                                                </li>
+                                                <li aria-haspopup="true" class=" ">
+                                                    <a href="{{route('exam.index')}}" class="nav-link  "> danh sách đề thi </a>
+                                                </li>
                                             </ul>
+
                                         </li>
                                     </ul>
                                 </div>
