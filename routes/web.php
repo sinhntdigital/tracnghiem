@@ -18,10 +18,12 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin/datatables_user', 'DatatablesController@userData')->name('datatables_user');
 	Route::get('/admin/datatables_role', 'DatatablesController@roleData')->name('datatables_role');
 	Route::get('/admin/datatables_field', 'DatatablesController@fieldData')->name('datatables_field');
+	Route::get('/admin/datatables_level', 'DatatablesController@levelData')->name('datatables_level');
 	Route::get('/', 'AdminController@index')->name('homeAdmin');
 	Route::resource('listRole', 'RoleController');
 	Route::resource('admin', 'AdminController');
 	Route::resource('field', 'FieldController');
+	Route::resource('level', 'LevelController');
 	/*datatable*/
 });
 /*----------manage route member----------*/

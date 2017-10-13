@@ -60,4 +60,22 @@ class DatatablesController extends Controller
 			                })
 			                ->make(true);
     }
+
+       //user datatables
+    public function LevelData()
+    {
+
+    	$level = \App\Level::leftjoin('fields','levels.field_id','=','fields.id')->select('levels.*',"fields.name")->get();
+       	return Datatables::of($level)
+			                ->addColumn('action', function($level) {
+			                	$textDelete = "<form action='' method='post'>";
+			                 	$textDelete .= csrf_field() . method_field('delete');
+								$textDelete .= "<a href='". route("level.edit", $level->id) ."' class=\"btn btn-xs btn-primary\"><i class=\"glyphicon glyphicon-edit\"></i></a>";
+								$textDelete .= "<button type=\"submit\" onclick=\"return confirm('Are you sure ?')\" class=\"btn btn-xs btn-danger\"><i class=\"glyphicon glyphicon-remove\"></i></button>";
+								$textDelete .= "</form>";
+
+				                return $textDelete;
+			                })
+			                ->make(true);
+    }
 }
