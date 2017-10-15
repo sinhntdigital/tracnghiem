@@ -62,4 +62,15 @@ class AdminController extends Controller
 	    return view("admin.user.create_and_edit",compact('listUsers','userEdits'));
     }
 
+     //-----select level-------//
+    public function selectLevel(Request $request) {
+    	if ($request->field_id == "")
+    		return "";
+    	else
+    	{
+    		$listLevels = \App\Level::where('field_id',$request->field_id)->get();
+    		return view("admin.ajax.select_level",compact('listLevels'));
+    	}
+    }
+
 }

@@ -20,6 +20,7 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin/datatables_field', 'DatatablesController@fieldData')->name('datatables_field');
 	Route::get('/admin/datatables_level', 'DatatablesController@levelData')->name('datatables_level');
 	Route::get('/admin/datatables_exam', 'DatatablesController@examData')->name('datatables_exam');
+	Route::get('/admin/select_level', 'AdminController@selectLevel')->name('select_level');
 	Route::get('/', 'AdminController@index')->name('homeAdmin');
 	Route::resource('listRole', 'RoleController');
 	Route::resource('admin', 'AdminController');

@@ -23,7 +23,8 @@ class ExamController extends Controller
      */
     public function create()
     {
-        //
+        $listFields = \App\Field::get();
+        return view('admin.exam.create_and_edit',compact('listFields'));
     }
 
     /**
@@ -33,8 +34,22 @@ class ExamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        if(isset($_POST['send_form_exam_edit'])) {
+            $exam = \App\Exam::find($request->exam_id);
+            $exam->level_id = $_POST['level_id'];
+            $exam->title_exam = $_POST['title_exam'];
+            $exam->user_id = 1;
+            $exam->save();
+        }
+        else {
+            $exam = new \App\Exam;
+            $exam->level_id = $_POST['level_id'];
+            $exam->title_exam = $_POST['title_exam'];
+            $exam->user_id = 1;
+            $exam->save();
+        }
+        return redirect()->route('exam.index');
     }
 
     /**
@@ -56,7 +71,11 @@ class ExamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rowExam = \App\Exam::where('id',$id)->first();
+        $rowLevel = \App\Level::where('id',$rowExam->level_id)->first();
+        $listFields = \App\Field::get();
+        $listLevels = \App\Level::where('field_id',$rowLevel->field_id)->get();
+        return view('admin.exam.create_and_edit',compact('rowExam','rowLevel','listFields','listLevels'));
     }
 
     /**
