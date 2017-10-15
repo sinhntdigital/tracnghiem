@@ -60,7 +60,8 @@ class ExamController extends Controller
      */
     public function show($id)
     {
-        //
+        $listQuestions = \App\Question::leftjoin('content_answers','questions.id','=','content_answers.question_id')->where('exam_id',$id)->groupBy('questions.id')->select('*',\DB::raw('count(question_id) as total_ans'))->get();
+        return view('admin.exam.detail_exam',compact('listQuestions'));
     }
 
     /**
