@@ -34,11 +34,20 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $question = new \App\Question;
-        $question->title_question = $request->title_question;
-        $question->content_question = $request->content_question;
-        $question->exam_id = $request->exam_id;
-        $question->save();
+        if(isset($_POST['send_form_question_edit'])) {
+            $question = \App\Question::find($_POST['question_id']);
+            $question->title_question = $request->title_question;
+            $question->content_question = $request->content_question;
+            $question->save();
+        }
+        else {
+            $question = new \App\Question;
+            $question->title_question = $request->title_question;
+            $question->content_question = $request->content_question;
+            $question->exam_id = $request->exam_id;
+            $question->save();
+        }
+        
         return redirect()->route('exam.show',$request->exam_id);
     }
 
@@ -61,7 +70,9 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = \App\Question::where('id',$id)->first();
+        return view('admin.question.create_and_edit',compact('question'));
+
     }
 
     /**

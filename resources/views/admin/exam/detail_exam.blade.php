@@ -34,6 +34,7 @@
 					@endif
 				</td>
 				<td><a href="{{route('answer.create','question_id='.$listQuestion->qid)}}">thêm đáp án</a></td>
+				<td><a href="{{route('question.edit',$listQuestion->qid)}}">sửa</a></td>
 			</tr>
 			<?php $i++; ?>
 		@endforeach
