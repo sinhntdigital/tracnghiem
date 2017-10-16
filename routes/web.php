@@ -27,6 +27,9 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::resource('field', 'FieldController');
 	Route::resource('level', 'LevelController');
 	Route::resource('exam', 'ExamController');
+	Route::get('/admin/addAnswer/{id}', 'examController@addAnswer')->name('addAnswer');
+	Route::resource('answer', 'AnswerController');
+	Route::resource('question', 'QuestionController');
 	/*datatable*/
 });
 /*----------manage route member----------*/

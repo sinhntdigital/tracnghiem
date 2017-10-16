@@ -1,6 +1,6 @@
 @extends('admin.app')
 @section('page_content')
-<a href="" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm câu hỏi</a>
+<a href="{{route('question.create','exam_id='.$listQuestions[0]->exam_id)}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm câu hỏi</a>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -8,7 +8,8 @@
 			<th>tiêu đề câu hỏi</th>
 			<th>nội dung câu hỏi</th>
 			<th>tổng đáp án</th>
-			<th></th>
+			<th>Chi tiết</th>
+			<th>Thêm đáp án</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -27,7 +28,12 @@
 				<td>
 					{{$listQuestion->total_ans}}
 				</td>
-				<td><a href="">thêm đáp án</a></td>
+				<td>
+					@if($listQuestion->total_ans>0)
+					<a href="{{route('addAnswer',$listQuestion->qid)}}">chi tiết</a>
+					@endif
+				</td>
+				<td><a href="{{route('answer.create','question_id='.$listQuestion->qid)}}">thêm đáp án</a></td>
 			</tr>
 			<?php $i++; ?>
 		@endforeach

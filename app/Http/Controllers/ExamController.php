@@ -60,7 +60,7 @@ class ExamController extends Controller
      */
     public function show($id)
     {
-        $listQuestions = \App\Question::leftjoin('content_answers','questions.id','=','content_answers.question_id')->where('exam_id',$id)->groupBy('questions.id')->select('*',\DB::raw('count(question_id) as total_ans'))->get();
+        $listQuestions = \App\Question::leftjoin('content_answers','questions.id','=','content_answers.question_id')->where('exam_id',$id)->groupBy('questions.id')->select('questions.*','questions.id as qid',\DB::raw('count(question_id) as total_ans'))->get();
         return view('admin.exam.detail_exam',compact('listQuestions'));
     }
 
@@ -100,5 +100,12 @@ class ExamController extends Controller
     public function destroy($id)
     {
         //
+    }
+    // add answer
+    public function addAnswer($id)
+    {
+        $contentAnswers = \App\ContentAnswer::where('question_id',$id)->get();
+        $question = \App\Question::where('id',$id)->first();
+        return view('admin.exam.question_and_answer',compact('contentAnswers','question'));
     }
 }
