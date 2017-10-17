@@ -39,14 +39,12 @@ class ExamController extends Controller
             $exam = \App\Exam::find($request->exam_id);
             $exam->level_id = $_POST['level_id'];
             $exam->title_exam = $_POST['title_exam'];
-            $exam->user_id = 1;
             $exam->save();
         }
         else {
             $exam = new \App\Exam;
             $exam->level_id = $_POST['level_id'];
             $exam->title_exam = $_POST['title_exam'];
-            $exam->user_id = 1;
             $exam->save();
         }
         return redirect()->route('exam.index');
