@@ -20,5 +20,4 @@
       <button type="submit" name="send_form_role" class="btn btn-default">Submit</button>
     </form>
   @endif
-
 @endsection

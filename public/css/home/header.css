@@ -1,0 +1,35 @@
+body {
+	background: #eee;
+}
+.header {
+	min-height: 150px;
+	margin-bottom: 20px;
+	float:left;
+	background: white;
+	margin-bottom: 20px;
+	width: 100%;
+	z-index: 5000;
+}
+.logo {
+	float:left;
+}
+.menu {
+	float: left;
+}
+	.menu ul {
+		font-size: 40px;
+		margin-top:45px;
+		margin-left: 40px;
+	}
+		.menu ul li {
+			display: inline;
+			margin-left: 30px;
+		}
+		.menu ul li:first-child {
+			margin-left: 0px;
+			font-weight: bold;
+		}
+
+.logout {
+	float:right;
+}

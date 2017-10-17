@@ -1,0 +1,16 @@
+.search {
+	background: #00b9f2;
+	padding-top: 14px;
+	padding-left: 20px;
+	margin-bottom: 30px;
+}
+.info-header{
+	min-height: 70px;
+	background: white;
+}
+
+.info-content{
+	min-height: 70px;
+	background: #e5f8fe;
+	min-height: 70px;
+}

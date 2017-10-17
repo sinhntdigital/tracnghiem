@@ -80,10 +80,48 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="{{asset("public/assets/global/plugins/select2/css/select2-bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
         <!-- <link href="../assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" /> -->
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" /> </head>
+        <link rel="shortcut icon" href="favicon.ico" /> 
+        <link rel="stylesheet" type="text/css" href="{{ asset("public/css/home/header.css") }}"/>
+    </head>
     <!-- END HEAD -->
 
-    <body class="page-container-bg-solid">
+    <body >
+        <div class="header">
+            <div class="logo">
+                <img src="{{ asset("public/home/images/logo.png") }}">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>sá</li>
+                    <li>sá</li>
+                    <li>sá</li>
+                </ul>
+            </div> 
+            <div class="logout">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+                
+        </div>
         @yield("page_content")
         <script src="{{ asset('public/assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/assets/global/plugins/bootstrap/js/bootstrap.min.js') }}"  type="text/javascript"></script>
