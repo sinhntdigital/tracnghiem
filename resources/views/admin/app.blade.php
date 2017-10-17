@@ -76,6 +76,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
         <link rel="stylesheet" type="text/css" href="{{ asset("public/css/bootstrap.css") }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset("public/fancybox/jquery.fancybox.css") }}"/>
+        <link href="{{asset("public/assets/global/plugins/select2/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset("public/assets/global/plugins/select2/css/select2-bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
         <!-- <link href="../assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" /> -->
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> </head>
@@ -578,7 +580,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="{{ asset('public/assets/layouts/global/scripts/quick-sidebar.min.js') }}"  type="text/javascript"></script>
         <script src="{{ asset('public/assets/layouts/global/scripts/quick-nav.min.js') }}"  type="text/javascript"></script>
         <script src="{{ asset('public/fancybox/jquery.fancybox.js') }}"  type="text/javascript"></script>
-    
+        <script src="{{ asset('public/assets/global/plugins/select2/js/select2.full.min.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('public/assets/pages/scripts/components-select2.min.js')}}" type="text/javascript"></script>
         @yield("scripts")
        
       
