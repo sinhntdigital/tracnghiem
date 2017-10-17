@@ -31,14 +31,19 @@
     <div class="info">
         <div class="row info-header">
             <div class="col-sm-12">
-                tổng số
+                <h3>Tổng số đề thi là : {{count($exams)}}</h3>
             </div>
         </div>
-        <div class="row info-content">
-            <div class="col-sm-12">
-                tổng số
+        @foreach($exams as $exam)
+            <div class="row info-content">
+                
+                <div class="col-sm-12">
+                    {{$exam->title_exam}}
+                </div>
             </div>
-        </div>
+        @endforeach
+        
+        {!! $exams->render() !!}
     </div>
 </div>
 @endsection
