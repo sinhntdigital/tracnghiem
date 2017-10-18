@@ -14,7 +14,8 @@
                        @foreach($listQuizs as $listQuiz)
                             <tr>
                                 <td>{{$listQuiz->title_exam}}</td>
-                                <td><a href="{{route('quiz',$listQuiz->id)}}" onclick="update_start_doing({{$listQuiz->id}})">Bắt đầu làm bài</a></td>
+                                <td><a href="{{route('quiz',$listQuiz->id)}}" onclick="update_start_doing({{$listQuiz->id}})">Bắt đầu</a></td>
+                                <td><a href="{{route('quiz',$listQuiz->id)}}">vào làm bài dang dở</a></td>
                                 <td><a href="{{route('deleteExam',$listQuiz->exam_id)}}" onclick="return confirm('are you sure?')">xóa</a></td>
                             </tr>
                        @endforeach
@@ -32,6 +33,7 @@
     function update_start_doing(sdoing) {
         timeKT = document.getElementById('timeKT').value
         $.ajax({
+            async : false,
             url: '{{route("usd")}}',
             type: 'GET',
             data: {sd: sdoing,timeKT: timeKT},

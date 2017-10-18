@@ -57,6 +57,11 @@ class QuizController extends Controller
     public function updateStartDoing() {
     	\App\Exam::where('id', $_GET['sd'])
 	          ->update(['start_doing' => date('Y-m-d H-i-s'),'end_doing' => date('Y-m-d H-i-s',strtotime("+ ".$_GET['timeKT']." minutes"))]);
+              
+        $answers=\App\User::join('role_user','users.id','=','role_user.user_id')->join('roles','roles.id','=','role_user.role_id')->join('user_exams','users.id','=','user_exams.user_id')->join('exams','exams.id','=','user_exams.exam_id')->leftjoin('questions','exams.id','=','questions.exam_id')->join('content_answers','questions.id','=','content_answers.question_id')->leftjoin('user_answers','content_answers.id','=','user_answers.content_answer_id')->where('role_user.user_id',Auth::user()->id)->where('exams.id','=',$_GET['sd'])->get();
+        foreach ($answers as $answer) {
+            $deletedRows = \App\UserAnswer::where('content_answer_id', $answer->content_answer_id)->where('user_id', Auth::user()->id)->delete();
+        }
     }
 
     /*__________result quiz__________*/
