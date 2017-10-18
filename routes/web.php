@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/update_start_doing','QuizController@updateStartDoing')->name('usd');
 	Route::get('result/{exam_id}','QuizController@result')->name('result');
 	Route::get('detailQuestion','QuizController@detailQuestion')->name('detailQuestion');
+	Route::get('addExam/{id}','UserExamController@addNew')->name('addExam');
+	Route::get('deleteExam/{id}','UserExamController@deleteExam')->name('deleteExam');
 });
 
 

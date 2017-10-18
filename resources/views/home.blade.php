@@ -38,7 +38,18 @@
             <div class="row info-content">
                 
                 <div class="col-sm-12">
-                    {{$exam->title_exam}}
+                    <?php $dem=0; ?>
+                    @foreach($userExams as $userExam)
+                        @if($userExam->exam_id == $exam->id)
+                            <?php $dem++; ?>
+                        @endif
+                    @endforeach
+                    @if($dem==0)
+                        {{$exam->title_exam}} :  <a href="{{route('addExam',$exam->id)}}">thêm vào danh sách thi</a>
+                    @else
+                        {{$exam->title_exam}} :  <a href="">Đã được thêm vào danh sách thi</a>
+                    @endif
+                    
                 </div>
             </div>
         @endforeach

@@ -18,6 +18,7 @@ class CreateTableUserExam extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('exam_id')->unsigned();
             $table->foreign('exam_id')->references('id')->on('exams');
+            $table->primary(['user_id', 'exam_id']);
             $table->timestamps();
         });
     }

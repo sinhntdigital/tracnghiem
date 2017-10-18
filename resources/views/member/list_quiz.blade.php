@@ -15,6 +15,7 @@
                             <tr>
                                 <td>{{$listQuiz->title_exam}}</td>
                                 <td><a href="{{route('quiz',$listQuiz->id)}}" onclick="update_start_doing({{$listQuiz->id}})">Bắt đầu làm bài</a></td>
+                                <td><a href="{{route('deleteExam',$listQuiz->exam_id)}}" onclick="return confirm('are you sure?')">xóa</a></td>
                             </tr>
                        @endforeach
                    </table>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $exams = \App\Exam::paginate(20);
-        return view('home',compact('exams'));
+        $userExams = \App\UserExam::where('user_id',Auth::user()->id)->get();
+        return view('home',compact('exams','userExams'));
     }
 }
