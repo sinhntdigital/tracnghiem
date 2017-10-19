@@ -34,7 +34,7 @@ Route::group(['middleware' => 'admin'], function(){
 });
 /*----------manage route member----------*/
 Route::group(['middleware' => 'auth'], function(){
-	Route::get('/home', 'HomeController@index')->name('home');
+	Route::any('/home', 'HomeController@index')->name('home');
 	Route::get('/quiz/{exam_id}','QuizController@index' )->name('quiz');
 	Route::get('/update_answer','QuizController@updateAnswer')->name('updateAnswer');
 	Route::get('/listquiz','QuizController@listQuiz')->name('listquiz');

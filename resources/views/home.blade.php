@@ -4,29 +4,35 @@
 <link rel="stylesheet" type="text/css" href="{{ asset("public/css/pagehome/pagehome.css") }}"/>
 <div class="clearfix"></div>
 <div class="container" >
-    <div class="search">
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <select  name="hang_hoa[]" id="single-append-radio" class="form-control select2-allow-clear select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true" placeholder="nhập lĩnh vực">
-                        <option>sdsd</option>
-                        <option>srwer</option>
-                    </select>
+    <form action="{{route('home')}}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="search">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <select  name="field[]" id="single-append-radio" class="form-control select2-allow-clear select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true" placeholder="nhập lĩnh vực">
+                            @foreach($fields as $field)
+                                <option value="{{$field->id}}">{{$field->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="form-group">
-                    <select  class="form-control">
-                        <option>sdsd</option>
-                        <option>srwer</option>
-                    </select>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <select  class="form-control" name="level" required="true">
+                            <option value="">chọn cấp độ</option>
+                            @foreach($levels as $level)
+                                <option value="{{$level->id}}">{{$level->title_level}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-2">
-                <button type="button" class="btn btn-warning">Tìm kiếm</button>
+                <div class="col-sm-2">
+                    <input type="submit" name="search_exam" class="btn btn-warning" value="Tìm kiếm" />
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <div class="info">
         <div class="row info-header">
@@ -57,4 +63,7 @@
         {!! $exams->render() !!}
     </div>
 </div>
+<script type="text/javascript">
+    setTimeout(function(){ $(".select2-search__field").attr('placeholder', 'chọn lĩnh vực' ); }, 20);
+</script>
 @endsection
