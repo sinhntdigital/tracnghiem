@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('public/css/member/quiz.css') }}"  rel="stylesheet" type="text/css" />
 <?php  $timeTN = strtotime($exam->end_doing) - strtotime('now') ; ?>
 <div class="container">
     <div class="row">
@@ -16,15 +17,15 @@
                                 {{$question->title_question}} : {{$question->content_question}}
                             </b>
                         </div>
-                        <div class="content_quiz col-md-12">
+                        <div class=" col-md-12">
                             @foreach($answers as $answer)
                                 @if($question->question_id==$answer->question_id)
-                                    <div class="element_quiz col-md-6">
-                                        <input type="checkbox" name="gender" <?php if($answer->user_answer==1) echo 'checked';?> value="{{$answer->content_answer_id}}" onclick="sendAnswer(this.value)" > 
+                                    <div class="element_quiz col-md-5 content_quiz" >
                                         {{$answer->content_answer}}
+                                        <input type="checkbox" name="gender" <?php if($answer->user_answer==1) echo 'checked';?> value="{{$answer->content_answer_id}}" onclick="sendAnswer(this.value)" > 
                                     </div>
                                 @endif
-                        @endforeach
+                            @endforeach
                         </div>
                        
                     @endforeach
