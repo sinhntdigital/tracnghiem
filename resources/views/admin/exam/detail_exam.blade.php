@@ -23,7 +23,7 @@
 					{{$listQuestion->title_question}}
 				</td>
 				<td>
-					{{$listQuestion->content_question}}
+					{!!$listQuestion->content_question!!}
 				</td>
 				<td>
 					{{$listQuestion->total_ans}}
