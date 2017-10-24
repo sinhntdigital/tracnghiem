@@ -73,7 +73,7 @@ $config = array(
 	| with start and final /
 	|
 	*/
-	'upload_dir' => '/mgd/public/img_upload/images/',
+	'upload_dir' => '/tracnghiem/public/img_upload/images/',
 	/*
 	|--------------------------------------------------------------------------
 	| relative path from filemanager folder to upload folder

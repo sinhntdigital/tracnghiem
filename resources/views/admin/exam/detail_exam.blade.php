@@ -1,5 +1,6 @@
 @extends('admin.app')
 @section('page_content')
+<a href="{{route('exam.index')}}" class="btn btn-info" >Quay lại</a>
 <a href="{{route('question.create','exam_id='.$listQuestions[0]->exam_id)}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm câu hỏi</a>
 <table class="table table-striped">
 	<thead>

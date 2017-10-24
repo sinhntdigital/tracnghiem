@@ -1,5 +1,6 @@
 @extends('admin.app')
 @section('page_content')
+  <a href="{{route('level.index')}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Quay lại</a>
   @if(isset($listLevel))
     <form action="{{route('level.store')}}" method="POST">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">

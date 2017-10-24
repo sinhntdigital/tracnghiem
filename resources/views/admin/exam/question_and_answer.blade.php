@@ -1,7 +1,8 @@
 @extends('admin.app')
 @section('page_content')
+<a href="{{route('exam.show',\App\Question::where('id',$contentAnswers[0]->question_id)->first()->exam_id)}}" class="btn btn-info">Quay lại</a>
 <a href="{{route('answer.create','question_id='.$contentAnswers[0]->question_id)}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Thêm đáp án</a>
-<h3>nội dung câu hỏi : {{$question->content_question}}</h3>
+<h3>nội dung câu hỏi : {!! $question->content_question !!}</h3>
 <table class="table table-striped">
   <thead>
     <tr>

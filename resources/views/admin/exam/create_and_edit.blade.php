@@ -1,5 +1,6 @@
 @extends('admin.app')
 @section('page_content')
+  <a href="{{route('exam.index')}}" class="btn btn-info" style="float: right;margin-bottom: 20px;">Quay lại</a>
   @if(isset($rowExam))
     <form action="{{route('exam.store')}}" method="POST">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -21,7 +21,7 @@
                        @endforeach
                    </table>
                    <div>
-                       Chọn thời gian làm bài <input type="number" name="" value=60 id="timeKT" > phút
+                       Chọn thời gian làm bài <input type="number" name="" value=1 id="timeKT" > phút
                    </div>
                 </div>
             </div>

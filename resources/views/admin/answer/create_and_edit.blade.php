@@ -1,6 +1,7 @@
 @extends('admin.app')
 @section('page_content')
   @if(isset($contentAnswer))
+    <a href="{{route('exam.show',\App\Question::where('id',$contentAnswer->question_id)->first()->exam_id)}}" class="btn btn-info">Quay lại</a>
     <form action="{{route('answer.store')}}" method="POST">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
@@ -23,6 +24,7 @@
       <button type="submit" name="send_form_answer_edit" class="btn btn-default">Submit</button>
     </form>
   @else
+    <a href="{{route('exam.show',\App\Question::where('id',$_GET['question_id'])->first()->exam_id)}}" class="btn btn-info">Quay lại</a>
     <form action="{{route('answer.store')}}" method="POST">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
