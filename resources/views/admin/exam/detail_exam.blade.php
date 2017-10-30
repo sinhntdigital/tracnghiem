@@ -8,6 +8,7 @@
 			<th>stt</th>
 			<th>tiêu đề câu hỏi</th>
 			<th>nội dung câu hỏi</th>
+			<th>giải thích</th>
 			<th>tổng đáp án</th>
 			<th>Chi tiết</th>
 			<th>Thêm đáp án</th>
@@ -25,6 +26,9 @@
 				</td>
 				<td>
 					{!!$listQuestion->content_question!!}
+				</td>
+				<td>
+					{{$listQuestion->explain}}
 				</td>
 				<td>
 					{{$listQuestion->total_ans}}

@@ -3,11 +3,11 @@
 <script src="{{ asset('public/assets/global/plugins/ckeditor/ckeditor.js') }}"></script>
   @if(isset($question))
     <a href="{{route('exam.show',$question->exam_id)}}" class="btn btn-info" >Quay lại</a>
-    <form action="{{route('question.store')}}" method="POST">
+    <form action="{{route('question.store')}}" method="POST" id="myForm">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
         <label >tiêu đề câu hỏi :</label>
-        <input type="text" class="form-control" id="title_question" required="true" name="title_question" required="true" value="{{$question->title_question}}">
+        <input type="text" class="form-control" id="title_question"  name="title_question" required="true" value="{{$question->title_question}}">
       </div>
       <div class="form-group">
       <div class="form-group">
@@ -23,7 +23,12 @@
       </div>
         <label >nội dung câu hỏi :</label>
 
-        <textarea cols="80" class="form-control" id="content_question" required="true" name="content_question" rows="10">{{$question->content_question}}</textarea>
+        <textarea cols="80" class="form-control" id="content_question" name="content_question" rows="10">{{$question->content_question}}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label >Giải thích :</label>
+        <textarea cols="80" class="form-control" id="explain" required="true" name="explain" rows="10" required="true">{{$question->explain}}</textarea>
       </div>
       <input type="hidden" name="question_id" value="{{$question->id}}">
       <input type="hidden" name="exam_id" value="{{$question->exam_id}}">
@@ -31,11 +36,11 @@
     </form>
   @else
     <a href="{{route('exam.show',$_GET['exam_id'])}}" class="btn btn-info" >Quay lại</a>
-    <form action="{{route('question.store')}}" method="POST">
+    <form action="{{route('question.store')}}" method="POST" id="myForm">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">
         <label >tiêu đề câu hỏi :</label>
-        <input type="text" class="form-control" id="title_question" required="true" name="title_question" required="true">
+        <input type="text" class="form-control" id="title_question"  name="title_question" required="true">
       </div>
       <div class="form-group">
         <label>Chọn avartar</label>
@@ -50,9 +55,13 @@
       </div>
       <div class="form-group">
         <label >nội dung câu hỏi :</label>
-        <textarea cols="80" class="form-control" id="content_question" required="true" name="content_question" rows="10"></textarea>
+        <textarea cols="80" class="form-control" id="content_question"  name="content_question" rows="10" ></textarea>
       </div>
-     
+      
+      <div class="form-group">
+        <label >Giải thích :</label>
+        <textarea cols="80" class="form-control" id="explain" required="true" name="explain" rows="10" required="true"></textarea>
+      </div>
       <input type="hidden" name="exam_id" value="{{$_GET['exam_id']}}">
       <button type="submit" name="send_form_question" class="btn btn-default">Submit</button>
     </form>

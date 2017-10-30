@@ -38,6 +38,7 @@ class QuestionController extends Controller
             $question = \App\Question::find($_POST['question_id']);
             $question->title_question = $request->title_question;
             $question->content_question = $request->content_question;
+            $question->explain = $request->explain;
             $question->save();
         }
         else {
@@ -45,6 +46,7 @@ class QuestionController extends Controller
             $question->title_question = $request->title_question;
             $question->content_question = $request->content_question;
             $question->exam_id = $request->exam_id;
+            $question->explain = $request->explain;
             $question->save();
         }
         

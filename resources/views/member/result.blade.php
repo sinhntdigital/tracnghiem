@@ -3,7 +3,7 @@
 @section('content')
     <b>Đáp án :</b><br>
     @foreach($results as $result)
-        {{ $result->title_question }} : {{ $result->content_answer }} <br>
+        {{ $result->title_question }} : {{ $result->content_answer }}  <br>
     @endforeach
     <b>Đáp án của bạn :</b><br>
     
@@ -36,8 +36,7 @@
                     <?php $diem++; ?>
                 @endif
             @endforeach
-    <b>Tổng điểm của bạn {{$diem}} / {{count($questions)}}</b>
-
+    <b>Tổng điểm của bạn {{$diem}} / {{count($questions)}}</b><br>
     <div class="container">
         <!-- Modal -->
         <div class="modal fade" id="detailQuestion" role="dialog">
