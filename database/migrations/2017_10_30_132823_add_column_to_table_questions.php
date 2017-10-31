@@ -14,7 +14,7 @@ class AddColumnToTableQuestions extends Migration
     public function up()
     {
         Schema::table('questions', function($table){
-            $table->string("explain")->nullable();
+            $table->string("explain",1000)->nullable();
         });
     }
 
